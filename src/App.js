@@ -8,7 +8,11 @@ function App() {
       <h1>Weather App</h1>
       <Weather />
       <footer>
-        <a href="https://github.com/ana-atn/weather-react-2">
+        <a
+          href="https://github.com/ana-atn/weather-react-2"
+          target="_blank"
+          rel="noreferrer"
+        >
           open-source code
         </a>{" "}
         by ana atanackovic
