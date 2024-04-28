@@ -1,24 +1,25 @@
 import React from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 import Weather from "./Weather";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <h1>Weather App</h1>
-      <Weather />
-      <footer>
-        <a
-          href="https://github.com/ana-atn/weather-react-2"
-          target="_blank"
-          rel="noreferrer"
-        >
-          open-source code
-        </a>{" "}
-        by ana atanackovic
-      </footer>
+      <div className="container">
+        <h1>Weather App</h1>
+        <Weather />
+        <footer>
+          <a
+            href="https://github.com/ana-atn/weather-react-2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open-source code
+          </a>{" "}
+          by ana atanackovic
+        </footer>
+      </div>
     </div>
   );
 }
-
-export default App;
