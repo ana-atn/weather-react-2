@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 import Search from "./images/search.svg";
 import SearchLocation from "./images/search-location.svg";
-import SunCloud from "./images/sun-cloud.png";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -22,12 +23,28 @@ export default function Weather(props) {
     });
   }
 
+  function search() {
+    const apiKey = "73a00877081bd43422bdee0f3022beb5";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="row city">
           <div className="col current-city">{weatherData.city}</div>
-          <form className="col searchbar">
+          <form className="col searchbar" onSubmit={handleSubmit}>
             <input
               className="bar form-control"
               type="text"
@@ -35,6 +52,7 @@ export default function Weather(props) {
               size="20"
               autoFocus="on"
               autoComplete="off"
+              onChange={handleCityChange}
             />
             <input className="go-button" type="image" src={Search} />
             <button className="my-location-button">
@@ -42,52 +60,11 @@ export default function Weather(props) {
             </button>
           </form>
         </div>
-        <FormattedDate date={weatherData.date} />
-        <div className="current-data">
-          <div className="row">
-            <div className="col temp-current">
-              <img src={SunCloud} width="70px" alt="Weather Icon" />
-              <span>{Math.round(weatherData.temperature)}</span>
-              <span className="c-f">
-                <span>
-                  <a href="#" className="tempconversion-link">
-                    {" "}
-                    °C
-                  </a>
-                </span>
-                |
-                <span>
-                  <a href="#" className="tempconversion-link">
-                    {" "}
-                    °F{" "}
-                  </a>
-                </span>
-              </span>
-              <br />
-              <div className="temp-current-min-max">
-                <span className="temp-max">
-                  {Math.round(weatherData.tempmax)}
-                </span>
-                /<span>{Math.round(weatherData.tempmin)}</span>
-              </div>
-            </div>
-            <div className="col current-other-info">
-              <ul>
-                <li>Humidity: {weatherData.humidity}%</li>
-                <li>Wind: {weatherData.wind} km/h</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    const apiKey = "73a00877081bd43422bdee0f3022beb5";
-
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
