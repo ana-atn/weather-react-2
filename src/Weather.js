@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-
 import WeatherInfo from "./WeatherInfo";
+
 import Search from "./images/search.svg";
 import SearchLocation from "./images/search-location.svg";
 
@@ -20,6 +20,7 @@ export default function Weather(props) {
       tempmax: response.data.main.temp_max,
       tempmin: response.data.main.temp_min,
       date: new Date(response.data.dt * 1000),
+      icon: response.data.weather[0].icon,
     });
   }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 import SunCloud from "./images/sun-cloud.png";
 
 export default function WeatherInfo(props) {
@@ -9,7 +10,8 @@ export default function WeatherInfo(props) {
       <div className="current-data">
         <div className="row">
           <div className="col temp-current">
-            <img src={SunCloud} width="70px" alt="Weather Icon" />
+            <WeatherIcon code={props.data.icon} width="70px" />
+
             <span>{Math.round(props.data.temperature)}</span>
             <span className="c-f">
               <span>
@@ -18,7 +20,7 @@ export default function WeatherInfo(props) {
                   °C
                 </a>
               </span>
-              |
+              {} |
               <span>
                 <a href="#" className="tempconversion-link">
                   {" "}

@@ -1,13 +1,24 @@
 .App footer {
-  margin-top: 100px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  opacity: 0.7;
 }
+
 .App .container {
   max-width: 750px;
-
   padding: 20px;
   display: block;
   margin: 80px auto 20px;
   border: 1px solid #02475e;
   border-radius: 10px;
   background-color: #ebf9ff;
+}
+
+.App a {
+  color: #02475e;
+}
+.App a:hover {
+  background-color: #02475e;
+  color: white;
 }
