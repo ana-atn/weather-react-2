@@ -1,12 +1,13 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+.App footer {
+  margin-top: 100px;
 }
+.App .container {
+  max-width: 750px;
 
-li {
-  text-align: left;
-}
-
-footer {
-  margin-top: 200px;
+  padding: 20px;
+  display: block;
+  margin: 80px auto 20px;
+  border: 1px solid #02475e;
+  border-radius: 10px;
+  background-color: #ebf9ff;
 }

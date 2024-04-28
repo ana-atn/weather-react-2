@@ -1,0 +1,93 @@
+.Weather body {
+  font-family: "Nunito", sans-serif;
+}
+.Weather ul {
+  list-style-type: none;
+  padding: 0;
+}
+.Weather footer {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.Weather a {
+  color: #02475e;
+}
+.Weather a:hover {
+  background-color: #02475e;
+  color: white;
+}
+.Weather button {
+  font-size: 30px;
+  border: none;
+  background-color: transparent;
+}
+.Weather button:hover {
+  opacity: 0.7;
+}
+
+.Weather .current-city {
+  font-size: 60px;
+  font-family: "Ribeye", cursive;
+  color: #02475e;
+}
+.Weather .current-date-time {
+  text-align: left;
+  font-size: 20px;
+  margin-left: 8px;
+  line-height: 15px;
+}
+.Weather .searchbar {
+  margin: 20px 12px;
+  padding: 0;
+  text-align: left;
+}
+.Weather .bar {
+  display: inline;
+  width: 260px;
+  line-height: 30px;
+}
+.Weather .go-button {
+  width: 25px;
+  padding: 2px;
+  margin-right: 6px;
+  margin-left: 4px;
+  margin-bottom: -8px;
+}
+.Weather .go-button:hover {
+  opacity: 0.6;
+}
+.Weather .my-location-button {
+  width: 25px;
+  padding: 2px;
+  margin-right: 4px;
+  margin-bottom: -8px;
+}
+.Weather .my-location-button:hover {
+  opacity: 0.6;
+}
+.Weather .temp-current {
+  font-size: 80px;
+  font-family: "Ribeye", cursive;
+  color: #02475e;
+}
+.Weather .temp-current-min-max {
+  font-size: 15px;
+  margin: -20px 120px 0;
+  font-family: "Nunito 200", sans-serif;
+}
+.Weather .temp-max {
+  font-weight: bolder;
+}
+.Weather .c-f {
+  font-size: 20px;
+}
+.Weather .tempconversion-link {
+  text-decoration: none;
+}
+
+.Weather .current-other-info {
+  margin-top: 35px;
+  text-align: left;
+}
