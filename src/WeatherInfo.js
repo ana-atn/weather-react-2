@@ -2,7 +2,6 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
-import SunCloud from "./images/sun-cloud.png";
 
 export default function WeatherInfo(props) {
   return (

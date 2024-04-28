@@ -52,21 +52,13 @@
   width: 25px;
   padding: 2px;
   margin-right: 6px;
-  margin-left: 4px;
+  margin-left: 15px;
   margin-bottom: -8px;
 }
 .Weather .go-button:hover {
   opacity: 0.6;
 }
-.Weather .my-location-button {
-  width: 25px;
-  padding: 2px;
-  margin-right: 4px;
-  margin-bottom: -8px;
-}
-.Weather .my-location-button:hover {
-  opacity: 0.6;
-}
+
 .Weather .temp-current {
   font-size: 80px;
   font-family: "Ribeye", cursive;

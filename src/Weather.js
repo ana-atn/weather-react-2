@@ -4,7 +4,6 @@ import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 
 import Search from "./images/search.svg";
-import SearchLocation from "./images/search-location.svg";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -55,10 +54,12 @@ export default function Weather(props) {
               autoComplete="off"
               onChange={handleCityChange}
             />
-            <input className="go-button" type="image" src={Search} />
-            <button className="my-location-button">
-              <img src={SearchLocation} />
-            </button>
+            <input
+              className="go-button"
+              type="image"
+              src={Search}
+              alt="Search Button"
+            />
           </form>
         </div>
         <WeatherInfo data={weatherData} />

@@ -22,7 +22,7 @@ export default function WeatherTemperature(props) {
           {} |
           <span>
             <a
-              href="#"
+              href=""
               className="tempconversion-link"
               onClick={convertToFahrenheit}
             >
@@ -49,7 +49,7 @@ export default function WeatherTemperature(props) {
         <span className="c-f">
           <span>
             <a
-              href="#"
+              href=""
               className="tempconversion-link"
               onClick={convertToCelsius}
             >
