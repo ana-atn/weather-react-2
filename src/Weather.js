@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import Search from "./images/search.svg";
 import SearchLocation from "./images/search-location.svg";
 import SunCloud from "./images/sun-cloud.png";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -17,7 +18,7 @@ export default function Weather() {
       wind: response.data.wind.speed,
       tempmax: response.data.main.temp_max,
       tempmin: response.data.main.temp_min,
-      date: "Friday, Aug 4, 17:24",
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -41,9 +42,7 @@ export default function Weather() {
             </button>
           </form>
         </div>
-        <div className="current-date-time" i>
-          {weatherData.date}
-        </div>
+        <FormattedDate date={weatherData.date} />
         <div className="current-data">
           <div className="row">
             <div className="col temp-current">
@@ -84,8 +83,8 @@ export default function Weather() {
     );
   } else {
     const apiKey = "73a00877081bd43422bdee0f3022beb5";
-    let city = "New York";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
 
