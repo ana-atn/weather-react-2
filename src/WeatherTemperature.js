@@ -33,8 +33,8 @@ export default function WeatherTemperature(props) {
         </span>
         <br />
         <div className="temp-current-min-max">
-          <span className="temp-max">{Math.round(props.maxcelsius)}</span>/
-          <span>{Math.round(props.mincelsius)}</span>
+          <span className="temp-max">{Math.round(props.maxcelsius)} </span>/
+          <span> {Math.round(props.mincelsius)}</span>
         </div>
       </span>
     );

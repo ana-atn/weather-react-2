@@ -40,5 +40,5 @@ export default function WeatherIcon(props) {
     url = CloudComputing;
   }
 
-  return <img src={url} alt="Weather Icon" width="70px" />;
+  return <img src={url} alt="Weather Icon" width={props.width} />;
 }

@@ -1,0 +1,27 @@
+.Forecast .weather-week {
+  text-align: center;
+  padding: 20px 12px 0;
+  column-gap: 5px;
+}
+
+.Forecast .weather-day {
+  border: 1px solid #02475e;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  margin: 3px;
+}
+
+.Forecast .day-name {
+  text-align: center;
+  background-color: #02475e;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.Forecast .temp-max-min {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Nunito 200", sans-serif;
+}
