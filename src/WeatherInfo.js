@@ -5,7 +5,7 @@ import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
-    <div className WeatherInfo>
+    <div className="WeatherInfo">
       <FormattedDate date={props.data.date} />
       <div className="current-data">
         <div className="row">
